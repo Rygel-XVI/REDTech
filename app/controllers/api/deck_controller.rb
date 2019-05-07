@@ -4,11 +4,18 @@ class Api::DeckController < ApplicationController
   end
 
   def create
-    deck = Deck.create_deck
+    deck = Deck.create!
+    d.create_cards
     render json: deck.cards
   end
 
   def destroy
+  end
+
+private
+
+  def deck_params
+    params.require(:deck).permit(:id)
   end
 
 end

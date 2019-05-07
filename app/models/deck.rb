@@ -1,16 +1,17 @@
 class Deck < ApplicationRecord
   has_many :cards
 
-  def self.create_deck
+
+# creates a full deck of cards and associates them with the current deck
+  def create_cards
     suits = ["Hearts", "Spades", "Clubs", "Diamonds"]
     numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-    deck = Deck.create!
     suits.each do |s|
       numbers.each do |n|
-        deck.cards << Card.create!(suit: s, number: n, deck_id: deck.id)
+        self.cards << Card.create!(suit: s, number: n, deck_id: self.id)
       end
     end
-    deck
+    self
   end
 
 end
