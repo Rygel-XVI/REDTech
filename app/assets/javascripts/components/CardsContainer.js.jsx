@@ -3,7 +3,26 @@ class CardsContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      cards: []
+      cards: [],
+      count: 0
+    }
+
+     this.handleClick = this.handleClick.bind(this)
+     this.handleButton = this.handleButton.bind(this)
+
+  }
+
+  handleClick(event) {
+    console.log("clicked it")
+  }
+
+  handleButton(event) {
+    console.log("pushed a button")
+  }
+
+  renderDrawButton() {
+    if (this.state.count < 5) {
+      <button onSubmit={this.handleButton} >Draw Card</button>
     }
   }
 
@@ -26,7 +45,11 @@ class CardsContainer extends React.Component {
   render(){
     return(
       <div>
-      Card Component
+      <Card cards={this.state.cards} handleClick={this.handleClick} />
+      <Card cards={this.state.cards} handleClick={this.handleClick} />
+      <Card cards={this.state.cards} handleClick={this.handleClick} />
+      <Card cards={this.state.cards} handleClick={this.handleClick} />
+      <Card cards={this.state.cards} handleClick={this.handleClick} />
       </div>
     )
   }

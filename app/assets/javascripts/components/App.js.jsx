@@ -1,9 +1,10 @@
+class App extends React.Component {
 
-const App = (props) => {
-  return (
-    <div>
-      <h1>App!</h1>
+  render(){
+    return(
+      <div>
       <CardsContainer />
-    </div>
-  )
+      </div>
+    )
+  }
 }
