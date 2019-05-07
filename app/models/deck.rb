@@ -10,6 +10,7 @@ class Deck < ApplicationRecord
         deck.cards << Card.create!(suit: s, number: n, deck_id: deck.id)
       end
     end
+    deck
   end
 
 end
