@@ -1,4 +1,4 @@
-class Card extends React.Component {
+class CardsContainer extends React.Component {
 
   constructor(props) {
     super(props)
