@@ -4,12 +4,8 @@ class Api::DeckController < ApplicationController
     render json: Deck.all
   end
 
-  def new
-
-  end
-
   def create
-
+    Deck.create_deck
   end
 
   def destroy
